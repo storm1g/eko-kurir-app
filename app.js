@@ -120,7 +120,7 @@ document.querySelector('#delivery-form').addEventListener('submit', (e) => {
 
   // Validation
   if(sender === '' || recipient === '' || price === '') {
-    UI.showAlert('Please fill in all fields', 'danger');
+    UI.showAlert('Niste popunili sva polja', 'danger');
   } else {
     // Instatiate a delivery
     const delivery = new Delivery(sender, recipient, price);
@@ -132,7 +132,7 @@ document.querySelector('#delivery-form').addEventListener('submit', (e) => {
     Store.addDelivery(delivery);
 
     // Show success message
-    UI.showAlert('Delivery added', 'success');
+    UI.showAlert('Dostava dodata', 'success');
 
     // Clear form fields
     UI.clearForm();
@@ -151,7 +151,7 @@ document.querySelector('#delivery-list').addEventListener('click', (e) => {
     Store.removeDelivery(e.target.dataset.id);
 
     // Show success message
-    UI.showAlert('Delivery deleted', 'success');
+    UI.showAlert('Dostava obrisana', 'success');
   } else if (classes.contains('complete')){
     // Add "done" class to the row element so the delivery gets marked as completed
     e.target.parentNode.parentNode.classList.toggle("done");
