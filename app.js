@@ -14,6 +14,7 @@ class UI {
     const deliveries = Store.getDeliveries();
 
     deliveries.forEach((delivery) => UI.addDeliveryToList(delivery));
+    console.log(deliveries);
   }
 
   static addDeliveryToList(delivery) {
@@ -106,7 +107,7 @@ class Utility {
 }
 
 // Event: Display Deliveries
-document.addEventListener('DOMContentLoaded', UI.showDeliveries);
+document.addEventListener('DOMContentLoaded', UI.displayDeliveries);
 
 // Event: Add Delivery
 document.querySelector('#delivery-form').addEventListener('submit', (e) => {
